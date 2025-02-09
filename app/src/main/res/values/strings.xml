@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cheezy Bite</string>
+    <string name="number_of_people">Number of people?</string>
+    <string name="how_hungry">How hungry?</string>
+    <string name="light">Light</string>
+    <string name="medium">Medium</string>
+    <string name="ravenous">Ravenous</string>
+    <string name="total_pizzas">Total pizzas: ?</string>
+    <string name="calculate">Calculate</string>
+    <string name="totalPizzasNum">Total pizzas: %d</string>
+</resources>

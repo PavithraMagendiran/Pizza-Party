@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/marginStart"
+    android:layout_marginTop="@dimen/marginTop"
+    android:layout_marginEnd="@dimen/marginEnd"
+    android:layout_marginBottom="@dimen/marginBottom"
+    android:background="@drawable/background_image"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.zybooks.pizzaparty.MainActivity">
+
+<!-- To display text  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="@string/number_of_people"
+        android:textStyle="bold"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_2"
+        android:labelFor="@id/numOfPeople" />
+
+    <!-- Space for user input -->
+    <EditText
+        android:id="@+id/numOfPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:minHeight="48dp"
+        android:textSize="@dimen/textSize_2"
+        android:inputType="number"
+        android:ems="5"
+        android:importantForAutofill="no" />
+
+    <!-- To display text  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/how_hungry"
+        android:textStyle="bold"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_2"
+        android:labelFor="@id/howHungryButton" />
+
+    <!-- To select option using radio buttons  -->
+    <RadioGroup
+        android:id="@+id/howHungryButton"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/lightRadioButton"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/light"
+            android:textColor="@color/darkGray"
+            android:textSize="@dimen/textSize_1"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/mediumRadioButton"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/medium"
+            android:textColor="@color/darkGray"
+            android:textSize="@dimen/textSize_1"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/ravenousRadioButton"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="@string/ravenous"
+            android:textStyle="bold"
+            android:textSize="@dimen/textSize_1"
+            android:textColor="@color/darkGray"/>
+    </RadioGroup>
+
+    <!-- To display text     -->
+    <TextView
+        android:id="@+id/numOfPizzas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/total_pizzas"
+        android:textColor="@color/darkGray"
+        android:textStyle="bold"
+        android:textSize="@dimen/textSize_3" />
+
+    <!-- Button to execute the calculate function  -->
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="calculateClick"
+        android:text="@string/calculate"
+        android:textSize="@dimen/textSize_1"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
