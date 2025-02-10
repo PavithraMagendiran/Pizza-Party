@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.numOfPizzas)
         howHungryRadioGroup = findViewById(R.id.howHungryButton)
     }
-    //function to calculate number of pizzas
+    //function to calculate number of pizzas //test
     // @param : view
     fun calculateClick(view: View) {
 
