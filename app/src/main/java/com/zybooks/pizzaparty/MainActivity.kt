@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
 
-    // To call the activity_main layout
+    //  To call the activity_main layout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
