@@ -8,4 +8,11 @@
     <string name="total_pizzas">Total pizzas: ?</string>
     <string name="calculate">Calculate</string>
     <string name="totalPizzasNum">Total pizzas: %d</string>
+    <string name="least_1_integer">Number must be less than 8 digit</string>
+    <string name="order_Pizza">Order Pizza</string>
+    <string-array name="sizes_array" >
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
 </resources>

@@ -2,8 +2,16 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PizzaParty" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="fontFamily">sans-serif-medium</item>
         <item name="colorPrimary">@color/Red</item>
+        <item name="colorPrimaryVariant">@color/Red</item>
      </style>
 
      <style name="Theme.PizzaParty" parent="Base.Theme.PizzaParty" />
  </resources>
+
+    <!-- <item name="android:colorBackground">#F0F0FF</item>
+            <item name="android:textColor">#FF6200EE</item>
+            <item name="android:textSize">24sp</item>
+            <item name="android:textStyle">bold</item> -->

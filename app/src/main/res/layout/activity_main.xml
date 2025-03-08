@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--Constraint Layout -->
+<!--Margin Dimensions used dimens.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,104 +14,127 @@
     android:layout_marginEnd="@dimen/marginEnd"
     android:layout_marginBottom="@dimen/marginBottom"
     android:background="@drawable/background_image"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
-    tools:context="com.zybooks.pizzaparty.MainActivity">
+    tools:context=".MainActivity"
+    android:configChanges="orientation|screenSize">
 
-<!-- To display text  -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="@string/number_of_people"
-        android:textStyle="bold"
-        android:textColor="@color/darkGray"
-        android:textSize="@dimen/textSize_2"
-        android:labelFor="@id/numOfPeople" />
-
-    <!-- Space for user input -->
-    <EditText
-        android:id="@+id/numOfPeople"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/darkGray"
-        android:minHeight="48dp"
-        android:textSize="@dimen/textSize_2"
-        android:inputType="number"
-        android:ems="5"
-        android:importantForAutofill="no" />
+    <!-- android:theme="@style/Theme.MaterialComponents.Light" -->
 
     <!-- To display text  -->
+
     <TextView
+        android:id="@+id/orderPizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/how_hungry"
-        android:textStyle="bold"
+        android:labelFor="@id/numOfPeople"
+        android:paddingTop="16dp"
+        android:text="@string/order_Pizza"
         android:textColor="@color/darkGray"
         android:textSize="@dimen/textSize_2"
-        android:labelFor="@id/howHungryButton" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- To select option using radio buttons  -->
-    <RadioGroup
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:labelFor="@id/numOfPeople"
+        android:paddingTop="16dp"
+        android:text="@string/number_of_people"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- To Display Text -->
+
+    <EditText
+        android:id="@+id/numOfPeople"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_2"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/textView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/length_error_message"
+        android:layout_width="203dp"
+        android:layout_height="24dp"
+        android:text="@string/least_1_integer"
+        android:textSize="@dimen/textSize_0"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/textView"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
         android:id="@+id/howHungryButton"
-        android:layout_marginTop="15dp"
-        android:layout_width="fill_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
+        android:layout_width="189dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:labelFor="@id/howHungryButton"
+        android:text="@string/how_hungry"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numOfPeople" />
 
-        <RadioButton
-            android:id="@+id/lightRadioButton"
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:text="@string/light"
-            android:textColor="@color/darkGray"
-            android:textSize="@dimen/textSize_1"
-            android:textStyle="bold" />
+    <!--  Spinner Widget   -->
 
-        <RadioButton
-            android:id="@+id/mediumRadioButton"
-            android:layout_width="122dp"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/medium"
-            android:textColor="@color/darkGray"
-            android:textSize="@dimen/textSize_1"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/ravenousRadioButton"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:text="@string/ravenous"
-            android:textStyle="bold"
-            android:textSize="@dimen/textSize_1"
-            android:textColor="@color/darkGray"/>
-    </RadioGroup>
+    <Spinner
+        android:id="@+id/spinner_size"
+        style="@style/spinner_size"
+        android:layout_width="171dp"
+        android:layout_height="50dp"
+        android:entries="@array/sizes_array"
+        app:layout_constraintBaseline_toBaselineOf="@id/howHungryButton"
+        app:layout_constraintLeft_toRightOf="@id/howHungryButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
 
     <!-- To display text     -->
-    <TextView
+     <TextView
         android:id="@+id/numOfPizzas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:freezesText="true"
         android:text="@string/total_pizzas"
         android:textColor="@color/darkGray"
+        android:textSize="@dimen/textSize_3"
         android:textStyle="bold"
-        android:textSize="@dimen/textSize_3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/howHungryButton" />
 
-    <!-- Button to execute the calculate function  -->
+    <!-- Button to execute the calculate function -->
+
     <Button
         android:id="@+id/calcButton"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        style="@style/CalcButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:onClick="calculateClick"
         android:text="@string/calculate"
-        android:textSize="@dimen/textSize_1"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/numOfPizzas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

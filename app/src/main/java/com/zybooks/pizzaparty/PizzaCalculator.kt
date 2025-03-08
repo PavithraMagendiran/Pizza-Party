@@ -2,6 +2,7 @@ package com.zybooks.pizzaparty
 
 import kotlin.math.ceil
 
+//Model
 // constant variable
 const val SLICES_PER_PIZZA = 8
 
